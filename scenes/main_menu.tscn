@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bhle0mhojpflc"]
+
+[ext_resource type="Script" uid="uid://qgmicomlvyb" path="res://PlayButton.cs" id="1_06t4h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aq0y1"]
+bg_color = Color(7.676855e-06, 0.6054227, 0.05166167, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Control" type="Control" unique_id=1709400737]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1194771680]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 698.0
+theme_override_font_sizes/font_size = 256
+text = "Wormholes!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="MenuButton" parent="." unique_id=148697516]
+layout_mode = 0
+offset_left = 736.0
+offset_top = 640.0
+offset_right = 1248.0
+offset_bottom = 896.0
+theme_override_font_sizes/font_size = 160
+theme_override_styles/normal = SubResource("StyleBoxFlat_aq0y1")
+text = "PLAY"
+flat = false
+script = ExtResource("1_06t4h")

@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://bv2umpvy0j3le"]
+
+[ext_resource type="Script" uid="uid://dbmm5bmgx57nw" path="res://scripts/MovingCharacter.cs" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://bo0x5kohqmnc6" path="res://assets/enhancedtoon-portal-gun-steam-exclusive.png" id="2_4dvvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a830d"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_40w6j"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_aq0y1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
+
+[node name="Node2D" type="Node2D" unique_id=1249255298]
+metadata/Player = NodePath("CharacterBody2D")
+metadata/AimAngle = 0.0
+
+[node name="WallUp" type="StaticBody2D" parent="." unique_id=2060123163]
+position = Vector2(0, -384)
+scale = Vector2(100, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallUp" unique_id=2019600294]
+shape = SubResource("RectangleShape2D_a830d")
+
+[node name="Sprite2D" type="Sprite2D" parent="WallUp" unique_id=2086976499]
+physics_interpolation_mode = 1
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_40w6j")
+
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=1038308612]
+position = Vector2(768, 0)
+scale = Vector2(1, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=1018424727]
+shape = SubResource("RectangleShape2D_a830d")
+
+[node name="Sprite2D" type="Sprite2D" parent="WallRight" unique_id=1403678382]
+physics_interpolation_mode = 1
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_40w6j")
+
+[node name="WallLeft" type="StaticBody2D" parent="." unique_id=1254596219]
+position = Vector2(-768, 0)
+scale = Vector2(1, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft" unique_id=301419989]
+shape = SubResource("RectangleShape2D_a830d")
+
+[node name="Sprite2D" type="Sprite2D" parent="WallLeft" unique_id=1703141161]
+physics_interpolation_mode = 1
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_40w6j")
+
+[node name="WallDown" type="StaticBody2D" parent="." unique_id=1988246128]
+position = Vector2(0, 384)
+scale = Vector2(100, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallDown" unique_id=119028931]
+shape = SubResource("RectangleShape2D_a830d")
+
+[node name="Sprite2D" type="Sprite2D" parent="WallDown" unique_id=531801741]
+physics_interpolation_mode = 1
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_40w6j")
+
+[node name="Area2D" type="Area2D" parent="WallDown" unique_id=575088231]
+position = Vector2(0, -128)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1259064901]
+disable_mode = 2
+script = ExtResource("1_0e48y")
+metadata/Speed = 4.0
+metadata/AimAngle = 0.0
+metadata/Hinge = NodePath("Hinge")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1969128376]
+modulate = Color(0.40392157, 1, 1, 1)
+scale = Vector2(30, 30)
+texture = SubResource("CanvasTexture_aq0y1")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1616237306]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1007964833]
+visible = false
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_y32ns")
+
+[node name="Hinge" type="Sprite2D" parent="CharacterBody2D" unique_id=1096231729]
+
+[node name="PortalGun" type="Sprite2D" parent="CharacterBody2D/Hinge" unique_id=29803]
+position = Vector2(50, 0)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_4dvvg")
