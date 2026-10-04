@@ -86,6 +86,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_y32ns")
 
 [node name="Hinge" type="Sprite2D" parent="CharacterBody2D" unique_id=1096231729]
+rotation = -3.1415927
 
 [node name="PortalGun" type="Sprite2D" parent="CharacterBody2D/Hinge" unique_id=29803]
 position = Vector2(50, 0)

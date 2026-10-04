@@ -38,8 +38,7 @@ public partial class MovingCharacter : CharacterBody2D
 				
 			if (HasMeta("Hinge")) {
 				hinge = GetNode<Sprite2D>((NodePath)GetMeta("Hinge"));
-				hinge.Rotation = 180*AimAngle/MathF.PI;
-				GD.Print(AimAngle);
+				hinge.Rotation = AimAngle;
 			}
 				
 		}
